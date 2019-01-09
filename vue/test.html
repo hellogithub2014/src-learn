@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script src="./dist/vue.js"></script>
+</head>
+
+
+<body>
+  <div id="app">
+    <my-comp v-model="txt"></my-comp>
+  </div>
+  <script type="text/javascript">
+    var vm = new Vue( {
+      el: '#app',
+      data()
+      {
+        return {
+          txt: 'ttttt'
+        }
+      },
+      components: {
+        myComp: {
+          props: {
+            value: {
+              type: String,
+              default: '',
+            },
+          },
+          template: `
+            <p>{{value}}</p>
+          `,
+        }
+      }
+    } )
+  </script>
+</body>
+
+</html>
