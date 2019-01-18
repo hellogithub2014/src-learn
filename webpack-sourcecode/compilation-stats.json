@@ -1,0 +1,1114 @@
+{
+  "errors": [],
+  "warnings": [],
+  "version": "4.28.2",
+  "hash": "a65e8bf5ade68231be0c",
+  "time": 349,
+  "builtAt": 1547800784759,
+  "publicPath": "",
+  "outputPath": "/fe-workspace/LEARN/source-code-learning/webpack-sourcecode/dist",
+  "assetsByChunkName": {
+    "main": [
+      "main.6e80eadb4c5f3736f037.js",
+      "main.6e80eadb4c5f3736f037.js.map"
+    ]
+  },
+  "assets": [
+    {
+      "name": "0.ecbea84ec45dc28d7947.js",
+      "size": 1207,
+      "chunks": [
+        0
+      ],
+      "chunkNames": [],
+      "emitted": true
+    },
+    {
+      "name": "0.ecbea84ec45dc28d7947.js.map",
+      "size": 491,
+      "chunks": [
+        0
+      ],
+      "chunkNames": [],
+      "emitted": true
+    },
+    {
+      "name": "1.e1f2fae721b174adf107.js",
+      "size": 758,
+      "chunks": [
+        1
+      ],
+      "chunkNames": [],
+      "emitted": true
+    },
+    {
+      "name": "1.e1f2fae721b174adf107.js.map",
+      "size": 237,
+      "chunks": [
+        1
+      ],
+      "chunkNames": [],
+      "emitted": true
+    },
+    {
+      "name": "main.6e80eadb4c5f3736f037.js",
+      "size": 11151,
+      "chunks": [
+        "main"
+      ],
+      "chunkNames": [
+        "main"
+      ],
+      "emitted": true
+    },
+    {
+      "name": "main.6e80eadb4c5f3736f037.js.map",
+      "size": 9448,
+      "chunks": [
+        "main"
+      ],
+      "chunkNames": [
+        "main"
+      ],
+      "emitted": true
+    }
+  ],
+  "filteredAssets": 0,
+  "entrypoints": {
+    "main": {
+      "chunks": [
+        "main"
+      ],
+      "assets": [
+        "main.6e80eadb4c5f3736f037.js",
+        "main.6e80eadb4c5f3736f037.js.map"
+      ],
+      "children": {},
+      "childAssets": {}
+    }
+  },
+  "namedChunkGroups": {
+    "main": {
+      "chunks": [
+        "main"
+      ],
+      "assets": [
+        "main.6e80eadb4c5f3736f037.js",
+        "main.6e80eadb4c5f3736f037.js.map"
+      ],
+      "children": {},
+      "childAssets": {}
+    }
+  },
+  "chunks": [
+    {
+      "id": 0,
+      "rendered": true,
+      "initial": false,
+      "entry": false,
+      "size": 230,
+      "names": [],
+      "files": [
+        "0.ecbea84ec45dc28d7947.js",
+        "0.ecbea84ec45dc28d7947.js.map"
+      ],
+      "hash": "ecbea84ec45dc28d7947",
+      "siblings": [],
+      "parents": [
+        "main"
+      ],
+      "children": [],
+      "childrenByOrder": {},
+      "modules": [
+        {
+          "id": "./runtime.js",
+          "identifier": "/fe-workspace/LEARN/source-code-learning/webpack-sourcecode/node_modules/babel-loader/lib/index.js??ref--6!/fe-workspace/LEARN/source-code-learning/webpack-sourcecode/runtime.js",
+          "name": "./runtime.js",
+          "index": 4,
+          "index2": 4,
+          "size": 115,
+          "cacheable": true,
+          "built": true,
+          "optional": false,
+          "prefetched": false,
+          "chunks": [
+            0
+          ],
+          "issuer": "/fe-workspace/LEARN/source-code-learning/webpack-sourcecode/node_modules/babel-loader/lib/index.js??ref--6!/fe-workspace/LEARN/source-code-learning/webpack-sourcecode/index.js",
+          "issuerId": "./index.js",
+          "issuerName": "./index.js",
+          "issuerPath": [
+            {
+              "id": "./index.js",
+              "identifier": "/fe-workspace/LEARN/source-code-learning/webpack-sourcecode/node_modules/babel-loader/lib/index.js??ref--6!/fe-workspace/LEARN/source-code-learning/webpack-sourcecode/index.js",
+              "name": "./index.js",
+              "profile": {
+                "factory": 26,
+                "building": 216
+              }
+            }
+          ],
+          "profile": {
+            "factory": 24,
+            "building": 5,
+            "dependencies": 3
+          },
+          "failed": false,
+          "errors": 0,
+          "warnings": 0,
+          "assets": [],
+          "reasons": [
+            {
+              "moduleId": "./index.js",
+              "moduleIdentifier": "/fe-workspace/LEARN/source-code-learning/webpack-sourcecode/node_modules/babel-loader/lib/index.js??ref--6!/fe-workspace/LEARN/source-code-learning/webpack-sourcecode/index.js",
+              "module": "./index.js",
+              "moduleName": "./index.js",
+              "type": "require.ensure item",
+              "userRequest": "./runtime.js",
+              "loc": "9:0-11:2"
+            }
+          ],
+          "usedExports": true,
+          "providedExports": [],
+          "optimizationBailout": [],
+          "depth": 1,
+          "source": "import { log } from './util';\nlog('log in runtime'); // exports.t = function() {\n//   console.log('runtime');\n// };"
+        },
+        {
+          "id": "./runtime2.js",
+          "identifier": "/fe-workspace/LEARN/source-code-learning/webpack-sourcecode/node_modules/babel-loader/lib/index.js??ref--6!/fe-workspace/LEARN/source-code-learning/webpack-sourcecode/runtime2.js",
+          "name": "./runtime2.js",
+          "index": 5,
+          "index2": 5,
+          "size": 115,
+          "cacheable": true,
+          "built": true,
+          "optional": false,
+          "prefetched": false,
+          "chunks": [
+            0
+          ],
+          "issuer": "/fe-workspace/LEARN/source-code-learning/webpack-sourcecode/node_modules/babel-loader/lib/index.js??ref--6!/fe-workspace/LEARN/source-code-learning/webpack-sourcecode/index.js",
+          "issuerId": "./index.js",
+          "issuerName": "./index.js",
+          "issuerPath": [
+            {
+              "id": "./index.js",
+              "identifier": "/fe-workspace/LEARN/source-code-learning/webpack-sourcecode/node_modules/babel-loader/lib/index.js??ref--6!/fe-workspace/LEARN/source-code-learning/webpack-sourcecode/index.js",
+              "name": "./index.js",
+              "profile": {
+                "factory": 26,
+                "building": 216
+              }
+            }
+          ],
+          "profile": {
+            "factory": 24,
+            "building": 5,
+            "dependencies": 3
+          },
+          "failed": false,
+          "errors": 0,
+          "warnings": 0,
+          "assets": [],
+          "reasons": [
+            {
+              "moduleId": "./index.js",
+              "moduleIdentifier": "/fe-workspace/LEARN/source-code-learning/webpack-sourcecode/node_modules/babel-loader/lib/index.js??ref--6!/fe-workspace/LEARN/source-code-learning/webpack-sourcecode/index.js",
+              "module": "./index.js",
+              "moduleName": "./index.js",
+              "type": "require.ensure item",
+              "userRequest": "./runtime2.js",
+              "loc": "9:0-11:2"
+            }
+          ],
+          "usedExports": true,
+          "providedExports": [],
+          "optimizationBailout": [],
+          "depth": 1,
+          "source": "import { log } from './util';\nlog('log in runtime'); // exports.t = function() {\n//   console.log('runtime');\n// };"
+        }
+      ],
+      "filteredModules": 0,
+      "origins": [
+        {
+          "moduleId": "./index.js",
+          "module": "/fe-workspace/LEARN/source-code-learning/webpack-sourcecode/node_modules/babel-loader/lib/index.js??ref--6!/fe-workspace/LEARN/source-code-learning/webpack-sourcecode/index.js",
+          "moduleIdentifier": "/fe-workspace/LEARN/source-code-learning/webpack-sourcecode/node_modules/babel-loader/lib/index.js??ref--6!/fe-workspace/LEARN/source-code-learning/webpack-sourcecode/index.js",
+          "moduleName": "./index.js",
+          "loc": "9:0-11:2",
+          "request": null,
+          "reasons": []
+        }
+      ]
+    },
+    {
+      "id": 1,
+      "rendered": true,
+      "initial": false,
+      "entry": false,
+      "size": 53,
+      "names": [],
+      "files": [
+        "1.e1f2fae721b174adf107.js",
+        "1.e1f2fae721b174adf107.js.map"
+      ],
+      "hash": "e1f2fae721b174adf107",
+      "siblings": [],
+      "parents": [
+        "main"
+      ],
+      "children": [],
+      "childrenByOrder": {},
+      "modules": [
+        {
+          "id": "./node_modules/babel-loader/lib/index.js?!./util.bundle.js",
+          "identifier": "/fe-workspace/LEARN/source-code-learning/webpack-sourcecode/node_modules/babel-loader/lib/index.js??ref--6!/fe-workspace/LEARN/source-code-learning/webpack-sourcecode/util.bundle.js",
+          "name": "./node_modules/babel-loader/lib??ref--6!./util.bundle.js",
+          "index": 6,
+          "index2": 6,
+          "size": 53,
+          "cacheable": true,
+          "built": true,
+          "optional": false,
+          "prefetched": false,
+          "chunks": [
+            1
+          ],
+          "issuer": "/fe-workspace/LEARN/source-code-learning/webpack-sourcecode/node_modules/bundle-loader/index.js!/fe-workspace/LEARN/source-code-learning/webpack-sourcecode/node_modules/babel-loader/lib/index.js??ref--6!/fe-workspace/LEARN/source-code-learning/webpack-sourcecode/util.bundle.js",
+          "issuerId": "./util.bundle.js",
+          "issuerName": "./util.bundle.js",
+          "issuerPath": [
+            {
+              "id": "./index.js",
+              "identifier": "/fe-workspace/LEARN/source-code-learning/webpack-sourcecode/node_modules/babel-loader/lib/index.js??ref--6!/fe-workspace/LEARN/source-code-learning/webpack-sourcecode/index.js",
+              "name": "./index.js",
+              "profile": {
+                "factory": 26,
+                "building": 216
+              }
+            },
+            {
+              "id": "./util.bundle.js",
+              "identifier": "/fe-workspace/LEARN/source-code-learning/webpack-sourcecode/node_modules/bundle-loader/index.js!/fe-workspace/LEARN/source-code-learning/webpack-sourcecode/node_modules/babel-loader/lib/index.js??ref--6!/fe-workspace/LEARN/source-code-learning/webpack-sourcecode/util.bundle.js",
+              "name": "./util.bundle.js",
+              "profile": {
+                "factory": 24,
+                "building": 5,
+                "dependencies": 3
+              }
+            }
+          ],
+          "profile": {
+            "factory": 0,
+            "building": 2
+          },
+          "failed": false,
+          "errors": 0,
+          "warnings": 0,
+          "assets": [],
+          "reasons": [
+            {
+              "moduleId": "./util.bundle.js",
+              "moduleIdentifier": "/fe-workspace/LEARN/source-code-learning/webpack-sourcecode/node_modules/bundle-loader/index.js!/fe-workspace/LEARN/source-code-learning/webpack-sourcecode/node_modules/babel-loader/lib/index.js??ref--6!/fe-workspace/LEARN/source-code-learning/webpack-sourcecode/util.bundle.js",
+              "module": "./util.bundle.js",
+              "moduleName": "./util.bundle.js",
+              "type": "cjs require",
+              "userRequest": "!!./node_modules/babel-loader/lib/index.js??ref--6!./util.bundle.js",
+              "loc": "8:8-86"
+            }
+          ],
+          "usedExports": true,
+          "providedExports": [
+            "bundle"
+          ],
+          "optimizationBailout": [],
+          "depth": 2,
+          "source": "export function bundle() {\n  console.log('bundle');\n}"
+        }
+      ],
+      "filteredModules": 0,
+      "origins": [
+        {
+          "moduleId": "./util.bundle.js",
+          "module": "/fe-workspace/LEARN/source-code-learning/webpack-sourcecode/node_modules/bundle-loader/index.js!/fe-workspace/LEARN/source-code-learning/webpack-sourcecode/node_modules/babel-loader/lib/index.js??ref--6!/fe-workspace/LEARN/source-code-learning/webpack-sourcecode/util.bundle.js",
+          "moduleIdentifier": "/fe-workspace/LEARN/source-code-learning/webpack-sourcecode/node_modules/bundle-loader/index.js!/fe-workspace/LEARN/source-code-learning/webpack-sourcecode/node_modules/babel-loader/lib/index.js??ref--6!/fe-workspace/LEARN/source-code-learning/webpack-sourcecode/util.bundle.js",
+          "moduleName": "./util.bundle.js",
+          "loc": "7:0-14:2",
+          "request": null,
+          "reasons": []
+        }
+      ]
+    },
+    {
+      "id": "main",
+      "rendered": true,
+      "initial": true,
+      "entry": true,
+      "size": 863,
+      "names": [
+        "main"
+      ],
+      "files": [
+        "main.6e80eadb4c5f3736f037.js",
+        "main.6e80eadb4c5f3736f037.js.map"
+      ],
+      "hash": "6e80eadb4c5f3736f037",
+      "siblings": [],
+      "parents": [],
+      "children": [
+        0,
+        1
+      ],
+      "childrenByOrder": {},
+      "modules": [
+        {
+          "id": "./index.js",
+          "identifier": "/fe-workspace/LEARN/source-code-learning/webpack-sourcecode/node_modules/babel-loader/lib/index.js??ref--6!/fe-workspace/LEARN/source-code-learning/webpack-sourcecode/index.js",
+          "name": "./index.js",
+          "index": 0,
+          "index2": 3,
+          "size": 354,
+          "cacheable": true,
+          "built": true,
+          "optional": false,
+          "prefetched": false,
+          "chunks": [
+            "main"
+          ],
+          "issuer": null,
+          "issuerId": null,
+          "issuerName": null,
+          "issuerPath": null,
+          "profile": {
+            "factory": 26,
+            "building": 216
+          },
+          "failed": false,
+          "errors": 0,
+          "warnings": 0,
+          "assets": [],
+          "reasons": [
+            {
+              "moduleId": null,
+              "moduleIdentifier": null,
+              "module": null,
+              "moduleName": null,
+              "type": "single entry",
+              "userRequest": "./index.js",
+              "loc": "main"
+            }
+          ],
+          "usedExports": true,
+          "providedExports": [],
+          "optimizationBailout": [],
+          "depth": 0,
+          "source": "import { log } from './util';\nlog('log in entry');\nimport bundle from './util.bundle.js';\nimport ignore from './ignore'; // test IgnorePlugin\n\nimport strange from './strange.ttt';\nconsole.log(strange);\n\nrequire.ensure(['./runtime.js', './runtime2.js'], function () {\n  console.log('ensured');\n});\n\nbundle(function (file) {\n  return console.log(file);\n});"
+        },
+        {
+          "id": "./strange.ttt",
+          "identifier": "/fe-workspace/LEARN/source-code-learning/webpack-sourcecode/my-loader.js!/fe-workspace/LEARN/source-code-learning/webpack-sourcecode/strange.ttt",
+          "name": "./strange.ttt",
+          "index": 3,
+          "index2": 2,
+          "size": 74,
+          "cacheable": true,
+          "built": true,
+          "optional": false,
+          "prefetched": false,
+          "chunks": [
+            "main"
+          ],
+          "issuer": "/fe-workspace/LEARN/source-code-learning/webpack-sourcecode/node_modules/babel-loader/lib/index.js??ref--6!/fe-workspace/LEARN/source-code-learning/webpack-sourcecode/index.js",
+          "issuerId": "./index.js",
+          "issuerName": "./index.js",
+          "issuerPath": [
+            {
+              "id": "./index.js",
+              "identifier": "/fe-workspace/LEARN/source-code-learning/webpack-sourcecode/node_modules/babel-loader/lib/index.js??ref--6!/fe-workspace/LEARN/source-code-learning/webpack-sourcecode/index.js",
+              "name": "./index.js",
+              "profile": {
+                "factory": 26,
+                "building": 216
+              }
+            }
+          ],
+          "profile": {
+            "factory": 24,
+            "building": 5,
+            "dependencies": 3
+          },
+          "failed": false,
+          "errors": 0,
+          "warnings": 0,
+          "assets": [],
+          "reasons": [
+            {
+              "moduleId": "./index.js",
+              "moduleIdentifier": "/fe-workspace/LEARN/source-code-learning/webpack-sourcecode/node_modules/babel-loader/lib/index.js??ref--6!/fe-workspace/LEARN/source-code-learning/webpack-sourcecode/index.js",
+              "module": "./index.js",
+              "moduleName": "./index.js",
+              "type": "harmony side effect evaluation",
+              "userRequest": "./strange.ttt",
+              "loc": "6:0-36"
+            },
+            {
+              "moduleId": "./index.js",
+              "moduleIdentifier": "/fe-workspace/LEARN/source-code-learning/webpack-sourcecode/node_modules/babel-loader/lib/index.js??ref--6!/fe-workspace/LEARN/source-code-learning/webpack-sourcecode/index.js",
+              "module": "./index.js",
+              "moduleName": "./index.js",
+              "type": "harmony import specifier",
+              "userRequest": "./strange.ttt",
+              "loc": "7:12-19"
+            }
+          ],
+          "usedExports": [
+            "default"
+          ],
+          "providedExports": [
+            "default"
+          ],
+          "optimizationBailout": [],
+          "depth": 1,
+          "source": "\n    export default \"Convert by my custom loader:  this is strange ttt\"\n  "
+        },
+        {
+          "id": "./util.bundle.js",
+          "identifier": "/fe-workspace/LEARN/source-code-learning/webpack-sourcecode/node_modules/bundle-loader/index.js!/fe-workspace/LEARN/source-code-learning/webpack-sourcecode/node_modules/babel-loader/lib/index.js??ref--6!/fe-workspace/LEARN/source-code-learning/webpack-sourcecode/util.bundle.js",
+          "name": "./util.bundle.js",
+          "index": 2,
+          "index2": 1,
+          "size": 337,
+          "cacheable": true,
+          "built": true,
+          "optional": false,
+          "prefetched": false,
+          "chunks": [
+            "main"
+          ],
+          "issuer": "/fe-workspace/LEARN/source-code-learning/webpack-sourcecode/node_modules/babel-loader/lib/index.js??ref--6!/fe-workspace/LEARN/source-code-learning/webpack-sourcecode/index.js",
+          "issuerId": "./index.js",
+          "issuerName": "./index.js",
+          "issuerPath": [
+            {
+              "id": "./index.js",
+              "identifier": "/fe-workspace/LEARN/source-code-learning/webpack-sourcecode/node_modules/babel-loader/lib/index.js??ref--6!/fe-workspace/LEARN/source-code-learning/webpack-sourcecode/index.js",
+              "name": "./index.js",
+              "profile": {
+                "factory": 26,
+                "building": 216
+              }
+            }
+          ],
+          "profile": {
+            "factory": 24,
+            "building": 5,
+            "dependencies": 3
+          },
+          "failed": false,
+          "errors": 0,
+          "warnings": 0,
+          "assets": [],
+          "reasons": [
+            {
+              "moduleId": "./index.js",
+              "moduleIdentifier": "/fe-workspace/LEARN/source-code-learning/webpack-sourcecode/node_modules/babel-loader/lib/index.js??ref--6!/fe-workspace/LEARN/source-code-learning/webpack-sourcecode/index.js",
+              "module": "./index.js",
+              "moduleName": "./index.js",
+              "type": "harmony side effect evaluation",
+              "userRequest": "./util.bundle.js",
+              "loc": "3:0-38"
+            },
+            {
+              "moduleId": "./index.js",
+              "moduleIdentifier": "/fe-workspace/LEARN/source-code-learning/webpack-sourcecode/node_modules/babel-loader/lib/index.js??ref--6!/fe-workspace/LEARN/source-code-learning/webpack-sourcecode/index.js",
+              "module": "./index.js",
+              "moduleName": "./index.js",
+              "type": "harmony import specifier",
+              "userRequest": "./util.bundle.js",
+              "loc": "13:0-6"
+            }
+          ],
+          "usedExports": [
+            "default"
+          ],
+          "providedExports": null,
+          "optimizationBailout": [],
+          "depth": 1,
+          "source": "var cbs = [], \n\tdata;\nmodule.exports = function(cb) {\n\tif(cbs) cbs.push(cb);\n\telse cb(data);\n}\nrequire.ensure([], function(require) {\n\tdata = require(\"!!./node_modules/babel-loader/lib/index.js??ref--6!./util.bundle.js\");\n\tvar callbacks = cbs;\n\tcbs = null;\n\tfor(var i = 0, l = callbacks.length; i < l; i++) {\n\t\tcallbacks[i](data);\n\t}\n});"
+        },
+        {
+          "id": "./util.js",
+          "identifier": "/fe-workspace/LEARN/source-code-learning/webpack-sourcecode/node_modules/babel-loader/lib/index.js??ref--6!/fe-workspace/LEARN/source-code-learning/webpack-sourcecode/util.js",
+          "name": "./util.js",
+          "index": 1,
+          "index2": 0,
+          "size": 98,
+          "cacheable": true,
+          "built": true,
+          "optional": false,
+          "prefetched": false,
+          "chunks": [
+            "main"
+          ],
+          "issuer": "/fe-workspace/LEARN/source-code-learning/webpack-sourcecode/node_modules/babel-loader/lib/index.js??ref--6!/fe-workspace/LEARN/source-code-learning/webpack-sourcecode/index.js",
+          "issuerId": "./index.js",
+          "issuerName": "./index.js",
+          "issuerPath": [
+            {
+              "id": "./index.js",
+              "identifier": "/fe-workspace/LEARN/source-code-learning/webpack-sourcecode/node_modules/babel-loader/lib/index.js??ref--6!/fe-workspace/LEARN/source-code-learning/webpack-sourcecode/index.js",
+              "name": "./index.js",
+              "profile": {
+                "factory": 26,
+                "building": 216
+              }
+            }
+          ],
+          "profile": {
+            "factory": 24,
+            "building": 5,
+            "dependencies": 3
+          },
+          "failed": false,
+          "errors": 0,
+          "warnings": 0,
+          "assets": [],
+          "reasons": [
+            {
+              "moduleId": "./index.js",
+              "moduleIdentifier": "/fe-workspace/LEARN/source-code-learning/webpack-sourcecode/node_modules/babel-loader/lib/index.js??ref--6!/fe-workspace/LEARN/source-code-learning/webpack-sourcecode/index.js",
+              "module": "./index.js",
+              "moduleName": "./index.js",
+              "type": "harmony side effect evaluation",
+              "userRequest": "./util",
+              "loc": "1:0-29"
+            },
+            {
+              "moduleId": "./index.js",
+              "moduleIdentifier": "/fe-workspace/LEARN/source-code-learning/webpack-sourcecode/node_modules/babel-loader/lib/index.js??ref--6!/fe-workspace/LEARN/source-code-learning/webpack-sourcecode/index.js",
+              "module": "./index.js",
+              "moduleName": "./index.js",
+              "type": "harmony import specifier",
+              "userRequest": "./util",
+              "loc": "2:0-3"
+            },
+            {
+              "moduleId": "./runtime.js",
+              "moduleIdentifier": "/fe-workspace/LEARN/source-code-learning/webpack-sourcecode/node_modules/babel-loader/lib/index.js??ref--6!/fe-workspace/LEARN/source-code-learning/webpack-sourcecode/runtime.js",
+              "module": "./runtime.js",
+              "moduleName": "./runtime.js",
+              "type": "harmony side effect evaluation",
+              "userRequest": "./util",
+              "loc": "1:0-29"
+            },
+            {
+              "moduleId": "./runtime.js",
+              "moduleIdentifier": "/fe-workspace/LEARN/source-code-learning/webpack-sourcecode/node_modules/babel-loader/lib/index.js??ref--6!/fe-workspace/LEARN/source-code-learning/webpack-sourcecode/runtime.js",
+              "module": "./runtime.js",
+              "moduleName": "./runtime.js",
+              "type": "harmony import specifier",
+              "userRequest": "./util",
+              "loc": "2:0-3"
+            },
+            {
+              "moduleId": "./runtime2.js",
+              "moduleIdentifier": "/fe-workspace/LEARN/source-code-learning/webpack-sourcecode/node_modules/babel-loader/lib/index.js??ref--6!/fe-workspace/LEARN/source-code-learning/webpack-sourcecode/runtime2.js",
+              "module": "./runtime2.js",
+              "moduleName": "./runtime2.js",
+              "type": "harmony side effect evaluation",
+              "userRequest": "./util",
+              "loc": "1:0-29"
+            },
+            {
+              "moduleId": "./runtime2.js",
+              "moduleIdentifier": "/fe-workspace/LEARN/source-code-learning/webpack-sourcecode/node_modules/babel-loader/lib/index.js??ref--6!/fe-workspace/LEARN/source-code-learning/webpack-sourcecode/runtime2.js",
+              "module": "./runtime2.js",
+              "moduleName": "./runtime2.js",
+              "type": "harmony import specifier",
+              "userRequest": "./util",
+              "loc": "2:0-3"
+            }
+          ],
+          "usedExports": [
+            "log"
+          ],
+          "providedExports": [
+            "log",
+            "unused"
+          ],
+          "optimizationBailout": [],
+          "depth": 1,
+          "source": "export function log(v) {\n  console.log(v);\n}\nexport function unused() {\n  console.log('unused');\n}"
+        }
+      ],
+      "filteredModules": 0,
+      "origins": [
+        {
+          "module": "",
+          "moduleIdentifier": "",
+          "moduleName": "",
+          "loc": "main",
+          "request": "./index.js",
+          "reasons": []
+        }
+      ]
+    }
+  ],
+  "modules": [
+    {
+      "id": "./index.js",
+      "identifier": "/fe-workspace/LEARN/source-code-learning/webpack-sourcecode/node_modules/babel-loader/lib/index.js??ref--6!/fe-workspace/LEARN/source-code-learning/webpack-sourcecode/index.js",
+      "name": "./index.js",
+      "index": 0,
+      "index2": 3,
+      "size": 354,
+      "cacheable": true,
+      "built": true,
+      "optional": false,
+      "prefetched": false,
+      "chunks": [
+        "main"
+      ],
+      "issuer": null,
+      "issuerId": null,
+      "issuerName": null,
+      "issuerPath": null,
+      "profile": {
+        "factory": 26,
+        "building": 216
+      },
+      "failed": false,
+      "errors": 0,
+      "warnings": 0,
+      "assets": [],
+      "reasons": [
+        {
+          "moduleId": null,
+          "moduleIdentifier": null,
+          "module": null,
+          "moduleName": null,
+          "type": "single entry",
+          "userRequest": "./index.js",
+          "loc": "main"
+        }
+      ],
+      "usedExports": true,
+      "providedExports": [],
+      "optimizationBailout": [],
+      "depth": 0,
+      "source": "import { log } from './util';\nlog('log in entry');\nimport bundle from './util.bundle.js';\nimport ignore from './ignore'; // test IgnorePlugin\n\nimport strange from './strange.ttt';\nconsole.log(strange);\n\nrequire.ensure(['./runtime.js', './runtime2.js'], function () {\n  console.log('ensured');\n});\n\nbundle(function (file) {\n  return console.log(file);\n});"
+    },
+    {
+      "id": "./node_modules/babel-loader/lib/index.js?!./util.bundle.js",
+      "identifier": "/fe-workspace/LEARN/source-code-learning/webpack-sourcecode/node_modules/babel-loader/lib/index.js??ref--6!/fe-workspace/LEARN/source-code-learning/webpack-sourcecode/util.bundle.js",
+      "name": "./node_modules/babel-loader/lib??ref--6!./util.bundle.js",
+      "index": 6,
+      "index2": 6,
+      "size": 53,
+      "cacheable": true,
+      "built": true,
+      "optional": false,
+      "prefetched": false,
+      "chunks": [
+        1
+      ],
+      "issuer": "/fe-workspace/LEARN/source-code-learning/webpack-sourcecode/node_modules/bundle-loader/index.js!/fe-workspace/LEARN/source-code-learning/webpack-sourcecode/node_modules/babel-loader/lib/index.js??ref--6!/fe-workspace/LEARN/source-code-learning/webpack-sourcecode/util.bundle.js",
+      "issuerId": "./util.bundle.js",
+      "issuerName": "./util.bundle.js",
+      "issuerPath": [
+        {
+          "id": "./index.js",
+          "identifier": "/fe-workspace/LEARN/source-code-learning/webpack-sourcecode/node_modules/babel-loader/lib/index.js??ref--6!/fe-workspace/LEARN/source-code-learning/webpack-sourcecode/index.js",
+          "name": "./index.js",
+          "profile": {
+            "factory": 26,
+            "building": 216
+          }
+        },
+        {
+          "id": "./util.bundle.js",
+          "identifier": "/fe-workspace/LEARN/source-code-learning/webpack-sourcecode/node_modules/bundle-loader/index.js!/fe-workspace/LEARN/source-code-learning/webpack-sourcecode/node_modules/babel-loader/lib/index.js??ref--6!/fe-workspace/LEARN/source-code-learning/webpack-sourcecode/util.bundle.js",
+          "name": "./util.bundle.js",
+          "profile": {
+            "factory": 24,
+            "building": 5,
+            "dependencies": 3
+          }
+        }
+      ],
+      "profile": {
+        "factory": 0,
+        "building": 2
+      },
+      "failed": false,
+      "errors": 0,
+      "warnings": 0,
+      "assets": [],
+      "reasons": [
+        {
+          "moduleId": "./util.bundle.js",
+          "moduleIdentifier": "/fe-workspace/LEARN/source-code-learning/webpack-sourcecode/node_modules/bundle-loader/index.js!/fe-workspace/LEARN/source-code-learning/webpack-sourcecode/node_modules/babel-loader/lib/index.js??ref--6!/fe-workspace/LEARN/source-code-learning/webpack-sourcecode/util.bundle.js",
+          "module": "./util.bundle.js",
+          "moduleName": "./util.bundle.js",
+          "type": "cjs require",
+          "userRequest": "!!./node_modules/babel-loader/lib/index.js??ref--6!./util.bundle.js",
+          "loc": "8:8-86"
+        }
+      ],
+      "usedExports": true,
+      "providedExports": [
+        "bundle"
+      ],
+      "optimizationBailout": [],
+      "depth": 2,
+      "source": "export function bundle() {\n  console.log('bundle');\n}"
+    },
+    {
+      "id": "./runtime.js",
+      "identifier": "/fe-workspace/LEARN/source-code-learning/webpack-sourcecode/node_modules/babel-loader/lib/index.js??ref--6!/fe-workspace/LEARN/source-code-learning/webpack-sourcecode/runtime.js",
+      "name": "./runtime.js",
+      "index": 4,
+      "index2": 4,
+      "size": 115,
+      "cacheable": true,
+      "built": true,
+      "optional": false,
+      "prefetched": false,
+      "chunks": [
+        0
+      ],
+      "issuer": "/fe-workspace/LEARN/source-code-learning/webpack-sourcecode/node_modules/babel-loader/lib/index.js??ref--6!/fe-workspace/LEARN/source-code-learning/webpack-sourcecode/index.js",
+      "issuerId": "./index.js",
+      "issuerName": "./index.js",
+      "issuerPath": [
+        {
+          "id": "./index.js",
+          "identifier": "/fe-workspace/LEARN/source-code-learning/webpack-sourcecode/node_modules/babel-loader/lib/index.js??ref--6!/fe-workspace/LEARN/source-code-learning/webpack-sourcecode/index.js",
+          "name": "./index.js",
+          "profile": {
+            "factory": 26,
+            "building": 216
+          }
+        }
+      ],
+      "profile": {
+        "factory": 24,
+        "building": 5,
+        "dependencies": 3
+      },
+      "failed": false,
+      "errors": 0,
+      "warnings": 0,
+      "assets": [],
+      "reasons": [
+        {
+          "moduleId": "./index.js",
+          "moduleIdentifier": "/fe-workspace/LEARN/source-code-learning/webpack-sourcecode/node_modules/babel-loader/lib/index.js??ref--6!/fe-workspace/LEARN/source-code-learning/webpack-sourcecode/index.js",
+          "module": "./index.js",
+          "moduleName": "./index.js",
+          "type": "require.ensure item",
+          "userRequest": "./runtime.js",
+          "loc": "9:0-11:2"
+        }
+      ],
+      "usedExports": true,
+      "providedExports": [],
+      "optimizationBailout": [],
+      "depth": 1,
+      "source": "import { log } from './util';\nlog('log in runtime'); // exports.t = function() {\n//   console.log('runtime');\n// };"
+    },
+    {
+      "id": "./runtime2.js",
+      "identifier": "/fe-workspace/LEARN/source-code-learning/webpack-sourcecode/node_modules/babel-loader/lib/index.js??ref--6!/fe-workspace/LEARN/source-code-learning/webpack-sourcecode/runtime2.js",
+      "name": "./runtime2.js",
+      "index": 5,
+      "index2": 5,
+      "size": 115,
+      "cacheable": true,
+      "built": true,
+      "optional": false,
+      "prefetched": false,
+      "chunks": [
+        0
+      ],
+      "issuer": "/fe-workspace/LEARN/source-code-learning/webpack-sourcecode/node_modules/babel-loader/lib/index.js??ref--6!/fe-workspace/LEARN/source-code-learning/webpack-sourcecode/index.js",
+      "issuerId": "./index.js",
+      "issuerName": "./index.js",
+      "issuerPath": [
+        {
+          "id": "./index.js",
+          "identifier": "/fe-workspace/LEARN/source-code-learning/webpack-sourcecode/node_modules/babel-loader/lib/index.js??ref--6!/fe-workspace/LEARN/source-code-learning/webpack-sourcecode/index.js",
+          "name": "./index.js",
+          "profile": {
+            "factory": 26,
+            "building": 216
+          }
+        }
+      ],
+      "profile": {
+        "factory": 24,
+        "building": 5,
+        "dependencies": 3
+      },
+      "failed": false,
+      "errors": 0,
+      "warnings": 0,
+      "assets": [],
+      "reasons": [
+        {
+          "moduleId": "./index.js",
+          "moduleIdentifier": "/fe-workspace/LEARN/source-code-learning/webpack-sourcecode/node_modules/babel-loader/lib/index.js??ref--6!/fe-workspace/LEARN/source-code-learning/webpack-sourcecode/index.js",
+          "module": "./index.js",
+          "moduleName": "./index.js",
+          "type": "require.ensure item",
+          "userRequest": "./runtime2.js",
+          "loc": "9:0-11:2"
+        }
+      ],
+      "usedExports": true,
+      "providedExports": [],
+      "optimizationBailout": [],
+      "depth": 1,
+      "source": "import { log } from './util';\nlog('log in runtime'); // exports.t = function() {\n//   console.log('runtime');\n// };"
+    },
+    {
+      "id": "./strange.ttt",
+      "identifier": "/fe-workspace/LEARN/source-code-learning/webpack-sourcecode/my-loader.js!/fe-workspace/LEARN/source-code-learning/webpack-sourcecode/strange.ttt",
+      "name": "./strange.ttt",
+      "index": 3,
+      "index2": 2,
+      "size": 74,
+      "cacheable": true,
+      "built": true,
+      "optional": false,
+      "prefetched": false,
+      "chunks": [
+        "main"
+      ],
+      "issuer": "/fe-workspace/LEARN/source-code-learning/webpack-sourcecode/node_modules/babel-loader/lib/index.js??ref--6!/fe-workspace/LEARN/source-code-learning/webpack-sourcecode/index.js",
+      "issuerId": "./index.js",
+      "issuerName": "./index.js",
+      "issuerPath": [
+        {
+          "id": "./index.js",
+          "identifier": "/fe-workspace/LEARN/source-code-learning/webpack-sourcecode/node_modules/babel-loader/lib/index.js??ref--6!/fe-workspace/LEARN/source-code-learning/webpack-sourcecode/index.js",
+          "name": "./index.js",
+          "profile": {
+            "factory": 26,
+            "building": 216
+          }
+        }
+      ],
+      "profile": {
+        "factory": 24,
+        "building": 5,
+        "dependencies": 3
+      },
+      "failed": false,
+      "errors": 0,
+      "warnings": 0,
+      "assets": [],
+      "reasons": [
+        {
+          "moduleId": "./index.js",
+          "moduleIdentifier": "/fe-workspace/LEARN/source-code-learning/webpack-sourcecode/node_modules/babel-loader/lib/index.js??ref--6!/fe-workspace/LEARN/source-code-learning/webpack-sourcecode/index.js",
+          "module": "./index.js",
+          "moduleName": "./index.js",
+          "type": "harmony side effect evaluation",
+          "userRequest": "./strange.ttt",
+          "loc": "6:0-36"
+        },
+        {
+          "moduleId": "./index.js",
+          "moduleIdentifier": "/fe-workspace/LEARN/source-code-learning/webpack-sourcecode/node_modules/babel-loader/lib/index.js??ref--6!/fe-workspace/LEARN/source-code-learning/webpack-sourcecode/index.js",
+          "module": "./index.js",
+          "moduleName": "./index.js",
+          "type": "harmony import specifier",
+          "userRequest": "./strange.ttt",
+          "loc": "7:12-19"
+        }
+      ],
+      "usedExports": [
+        "default"
+      ],
+      "providedExports": [
+        "default"
+      ],
+      "optimizationBailout": [],
+      "depth": 1,
+      "source": "\n    export default \"Convert by my custom loader:  this is strange ttt\"\n  "
+    },
+    {
+      "id": "./util.bundle.js",
+      "identifier": "/fe-workspace/LEARN/source-code-learning/webpack-sourcecode/node_modules/bundle-loader/index.js!/fe-workspace/LEARN/source-code-learning/webpack-sourcecode/node_modules/babel-loader/lib/index.js??ref--6!/fe-workspace/LEARN/source-code-learning/webpack-sourcecode/util.bundle.js",
+      "name": "./util.bundle.js",
+      "index": 2,
+      "index2": 1,
+      "size": 337,
+      "cacheable": true,
+      "built": true,
+      "optional": false,
+      "prefetched": false,
+      "chunks": [
+        "main"
+      ],
+      "issuer": "/fe-workspace/LEARN/source-code-learning/webpack-sourcecode/node_modules/babel-loader/lib/index.js??ref--6!/fe-workspace/LEARN/source-code-learning/webpack-sourcecode/index.js",
+      "issuerId": "./index.js",
+      "issuerName": "./index.js",
+      "issuerPath": [
+        {
+          "id": "./index.js",
+          "identifier": "/fe-workspace/LEARN/source-code-learning/webpack-sourcecode/node_modules/babel-loader/lib/index.js??ref--6!/fe-workspace/LEARN/source-code-learning/webpack-sourcecode/index.js",
+          "name": "./index.js",
+          "profile": {
+            "factory": 26,
+            "building": 216
+          }
+        }
+      ],
+      "profile": {
+        "factory": 24,
+        "building": 5,
+        "dependencies": 3
+      },
+      "failed": false,
+      "errors": 0,
+      "warnings": 0,
+      "assets": [],
+      "reasons": [
+        {
+          "moduleId": "./index.js",
+          "moduleIdentifier": "/fe-workspace/LEARN/source-code-learning/webpack-sourcecode/node_modules/babel-loader/lib/index.js??ref--6!/fe-workspace/LEARN/source-code-learning/webpack-sourcecode/index.js",
+          "module": "./index.js",
+          "moduleName": "./index.js",
+          "type": "harmony side effect evaluation",
+          "userRequest": "./util.bundle.js",
+          "loc": "3:0-38"
+        },
+        {
+          "moduleId": "./index.js",
+          "moduleIdentifier": "/fe-workspace/LEARN/source-code-learning/webpack-sourcecode/node_modules/babel-loader/lib/index.js??ref--6!/fe-workspace/LEARN/source-code-learning/webpack-sourcecode/index.js",
+          "module": "./index.js",
+          "moduleName": "./index.js",
+          "type": "harmony import specifier",
+          "userRequest": "./util.bundle.js",
+          "loc": "13:0-6"
+        }
+      ],
+      "usedExports": [
+        "default"
+      ],
+      "providedExports": null,
+      "optimizationBailout": [],
+      "depth": 1,
+      "source": "var cbs = [], \n\tdata;\nmodule.exports = function(cb) {\n\tif(cbs) cbs.push(cb);\n\telse cb(data);\n}\nrequire.ensure([], function(require) {\n\tdata = require(\"!!./node_modules/babel-loader/lib/index.js??ref--6!./util.bundle.js\");\n\tvar callbacks = cbs;\n\tcbs = null;\n\tfor(var i = 0, l = callbacks.length; i < l; i++) {\n\t\tcallbacks[i](data);\n\t}\n});"
+    },
+    {
+      "id": "./util.js",
+      "identifier": "/fe-workspace/LEARN/source-code-learning/webpack-sourcecode/node_modules/babel-loader/lib/index.js??ref--6!/fe-workspace/LEARN/source-code-learning/webpack-sourcecode/util.js",
+      "name": "./util.js",
+      "index": 1,
+      "index2": 0,
+      "size": 98,
+      "cacheable": true,
+      "built": true,
+      "optional": false,
+      "prefetched": false,
+      "chunks": [
+        "main"
+      ],
+      "issuer": "/fe-workspace/LEARN/source-code-learning/webpack-sourcecode/node_modules/babel-loader/lib/index.js??ref--6!/fe-workspace/LEARN/source-code-learning/webpack-sourcecode/index.js",
+      "issuerId": "./index.js",
+      "issuerName": "./index.js",
+      "issuerPath": [
+        {
+          "id": "./index.js",
+          "identifier": "/fe-workspace/LEARN/source-code-learning/webpack-sourcecode/node_modules/babel-loader/lib/index.js??ref--6!/fe-workspace/LEARN/source-code-learning/webpack-sourcecode/index.js",
+          "name": "./index.js",
+          "profile": {
+            "factory": 26,
+            "building": 216
+          }
+        }
+      ],
+      "profile": {
+        "factory": 24,
+        "building": 5,
+        "dependencies": 3
+      },
+      "failed": false,
+      "errors": 0,
+      "warnings": 0,
+      "assets": [],
+      "reasons": [
+        {
+          "moduleId": "./index.js",
+          "moduleIdentifier": "/fe-workspace/LEARN/source-code-learning/webpack-sourcecode/node_modules/babel-loader/lib/index.js??ref--6!/fe-workspace/LEARN/source-code-learning/webpack-sourcecode/index.js",
+          "module": "./index.js",
+          "moduleName": "./index.js",
+          "type": "harmony side effect evaluation",
+          "userRequest": "./util",
+          "loc": "1:0-29"
+        },
+        {
+          "moduleId": "./index.js",
+          "moduleIdentifier": "/fe-workspace/LEARN/source-code-learning/webpack-sourcecode/node_modules/babel-loader/lib/index.js??ref--6!/fe-workspace/LEARN/source-code-learning/webpack-sourcecode/index.js",
+          "module": "./index.js",
+          "moduleName": "./index.js",
+          "type": "harmony import specifier",
+          "userRequest": "./util",
+          "loc": "2:0-3"
+        },
+        {
+          "moduleId": "./runtime.js",
+          "moduleIdentifier": "/fe-workspace/LEARN/source-code-learning/webpack-sourcecode/node_modules/babel-loader/lib/index.js??ref--6!/fe-workspace/LEARN/source-code-learning/webpack-sourcecode/runtime.js",
+          "module": "./runtime.js",
+          "moduleName": "./runtime.js",
+          "type": "harmony side effect evaluation",
+          "userRequest": "./util",
+          "loc": "1:0-29"
+        },
+        {
+          "moduleId": "./runtime.js",
+          "moduleIdentifier": "/fe-workspace/LEARN/source-code-learning/webpack-sourcecode/node_modules/babel-loader/lib/index.js??ref--6!/fe-workspace/LEARN/source-code-learning/webpack-sourcecode/runtime.js",
+          "module": "./runtime.js",
+          "moduleName": "./runtime.js",
+          "type": "harmony import specifier",
+          "userRequest": "./util",
+          "loc": "2:0-3"
+        },
+        {
+          "moduleId": "./runtime2.js",
+          "moduleIdentifier": "/fe-workspace/LEARN/source-code-learning/webpack-sourcecode/node_modules/babel-loader/lib/index.js??ref--6!/fe-workspace/LEARN/source-code-learning/webpack-sourcecode/runtime2.js",
+          "module": "./runtime2.js",
+          "moduleName": "./runtime2.js",
+          "type": "harmony side effect evaluation",
+          "userRequest": "./util",
+          "loc": "1:0-29"
+        },
+        {
+          "moduleId": "./runtime2.js",
+          "moduleIdentifier": "/fe-workspace/LEARN/source-code-learning/webpack-sourcecode/node_modules/babel-loader/lib/index.js??ref--6!/fe-workspace/LEARN/source-code-learning/webpack-sourcecode/runtime2.js",
+          "module": "./runtime2.js",
+          "moduleName": "./runtime2.js",
+          "type": "harmony import specifier",
+          "userRequest": "./util",
+          "loc": "2:0-3"
+        }
+      ],
+      "usedExports": [
+        "log"
+      ],
+      "providedExports": [
+        "log",
+        "unused"
+      ],
+      "optimizationBailout": [],
+      "depth": 1,
+      "source": "export function log(v) {\n  console.log(v);\n}\nexport function unused() {\n  console.log('unused');\n}"
+    }
+  ],
+  "filteredModules": 0,
+  "children": []
+}
