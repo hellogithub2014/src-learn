@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>vue-infinite-scroll</title>
+    <style>
+      .app {
+        height: 1000px;
+        border: 1px solid red;
+        width: 600px;
+        margin: 0 auto;
+        overflow: auto;
+      }
+      .content {
+        height: 1300px;
+        background-color: #ccc;
+        width: 80%;
+        margin: 0 auto;
+      }
+      .loading {
+        font-weight: bold;
+        font-size: 20px;
+        color: red;
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="app">
+      <div class="content" v-infinite-scroll="loadMore" infinite-scroll-disabled="busy" infinite-scroll-distance="10"></div>
+      <div class="loading" v-show="busy">loading.....</div>
+    </div>
+    <!-- <div class="app" v-infinite-scroll="loadMore" infinite-scroll-disabled="busy" infinite-scroll-distance="10">
+      <div class="content"></div>
+      <div class="loading" v-show="busy">loading.....</div>
+    </div> -->
+    <script src="https://cdn.css.net/libs/vue/2.0.3/vue.js"></script>
+    <script src="./infinite-scroll.js"></script>
+    <script>
+      var app = document.querySelector('.app');
+      new Vue({
+        el: app,
+        directives: {
+          InfiniteScroll,
+        },
+        data: function() {
+          return { busy: false };
+        },
+        methods: {
+          loadMore: function() {
+            var self = this;
+            self.busy = true;
+            console.log('loading... ' + new Date());
+            setTimeout(function() {
+              var target = document.querySelector('.content');
+              var height = target.clientHeight;
+              target.style.height = height + 300 + 'px';
+              console.log('end... ' + new Date());
+              self.busy = false;
+            }, 1000);
+          },
+        },
+      });
+    </script>
+  </body>
+</html>
