@@ -121,6 +121,15 @@ export function getWindowWidth(): number {
   );
 }
 
+/**
+ * node或者node的某个父节点中，class含有指定的blockClass
+ *
+ * @author liubin.frontend
+ * @export
+ * @param {(Node | null)} node
+ * @param {blockClass} blockClass 默认是 'rr-block'
+ * @returns {boolean}
+ */
 export function isBlocked(node: Node | null, blockClass: blockClass): boolean {
   if (!node) {
     return false;

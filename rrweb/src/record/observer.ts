@@ -333,8 +333,10 @@ function initMouseInteractionObserver(
   blockClass: blockClass,
 ): listenerHandler {
   const handlers: listenerHandler[] = [];
+  // keyof: 获取对象key的类型 https://www.typescriptlang.org/docs/handbook/release-notes/typescript-2-1.html
   const getHandler = (eventKey: keyof typeof MouseInteractions) => {
     return (event: MouseEvent | TouchEvent) => {
+      // 类名含有blockClass的节点不记录鼠标交互，类似于白名单？
       if (isBlocked(event.target as Node, blockClass)) {
         return;
       }
