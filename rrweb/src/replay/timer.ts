@@ -8,7 +8,7 @@ export default class Timer {
   private raf: number;
 
   constructor(config: playerConfig, actions: actionWithDelay[] = []) {
-    this.actions = actions;
+    this.actions = actions; // 按照delay升序排列
     this.config = config;
   }
   /**
@@ -34,8 +34,9 @@ export default class Timer {
     const { actions, config } = this;
     const self = this;
     function check(time: number) {
-      self.timeOffset += (time - lastTimestamp) * config.speed;
+      self.timeOffset += (time - lastTimestamp) * config.speed; // 计时器走过的时长
       lastTimestamp = time;
+      // 将所有在timeOffset之前的action全部执行掉
       while (actions.length) {
         const action = actions[0];
         if (self.timeOffset >= action.delay) {
@@ -59,6 +60,15 @@ export default class Timer {
     this.actions.length = 0;
   }
 
+  /**
+   * 按照delay属性进行二分查找，如果找不到返回该插入的位置
+   *
+   * @author liubin.frontend
+   * @private
+   * @param {actionWithDelay} action
+   * @returns {number}
+   * @memberof Timer
+   */
   private findActionIndex(action: actionWithDelay): number {
     let start = 0;
     let end = this.actions.length - 1;

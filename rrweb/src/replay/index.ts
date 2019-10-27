@@ -51,7 +51,7 @@ export class Replayer {
   // record last played event timestamp when paused
   private lastPlayedEvent: eventWithTime;
 
-  private nextUserInteractionEvent: eventWithTime | null;
+  private nextUserInteractionEvent: eventWithTime | null; // 下一个属于用户交互产生的事件
   private noramlSpeed: number = -1;
 
   private missingNodeRetryMap: missingNodeMap = {};
@@ -64,7 +64,7 @@ export class Replayer {
     this.handleResize = this.handleResize.bind(this);
 
     const defaultConfig: playerConfig = {
-      speed: 1,
+      speed: 1, // 倍数
       root: document.body,
       loadTimeout: 0,
       skipInactive: false,
@@ -87,6 +87,7 @@ export class Replayer {
     this.emitter.on(event, handler);
   }
 
+  // 覆盖当前设置
   public setConfig(config: Partial<playerConfig>) {
     Object.keys(config).forEach((key: keyof playerConfig) => {
       this.config[key] = config[key]!;
@@ -100,7 +101,7 @@ export class Replayer {
     const firstEvent = this.events[0];
     const lastEvent = this.events[this.events.length - 1];
     return {
-      totalTime: lastEvent.timestamp - firstEvent.timestamp,
+      totalTime: lastEvent.timestamp - firstEvent.timestamp, // 录屏总时长
     };
   }
 
@@ -119,17 +120,17 @@ export class Replayer {
    * So the implementation of play at any time offset will always iterate
    * all of the events, cast event before the offset synchronously
    * and cast event after the offset asynchronously with timer.
-   * @param timeOffset number
+   * @param timeOffset number 表示一个时长，目的是指定时间开始播放，比如指定第5s开始播放
    */
   public play(timeOffset = 0) {
     this.timer.clear();
-    this.baselineTime = this.events[0].timestamp + timeOffset;
+    this.baselineTime = this.events[0].timestamp + timeOffset; // 重置基准时间戳为：初始事件时间戳+用户指定的时长
     const actions = new Array<actionWithDelay>();
     for (const event of this.events) {
       const isSync = event.timestamp < this.baselineTime;
       const castFn = this.getCastFn(event, isSync);
       if (isSync) {
-        castFn();
+        castFn(); // 在baselineTime之前的event先同步执行掉
       } else {
         actions.push({ doAction: castFn, delay: this.getDelay(event) });
       }
@@ -140,21 +141,30 @@ export class Replayer {
   }
 
   public pause() {
-    this.timer.clear();
+    this.timer.clear(); // 会清空内部所有actions
     this.emitter.emit(ReplayerEvents.Pause);
   }
 
+  /**
+   * 从指定的时长开始恢复播放
+   *
+   * @author liubin.frontend
+   * @param {number} [timeOffset=0] 与play方法参数作用相同
+   * @memberof Replayer
+   */
   public resume(timeOffset = 0) {
-    this.timer.clear();
+    this.timer.clear(); // 会清空内部所有actions
     this.baselineTime = this.events[0].timestamp + timeOffset;
     const actions = new Array<actionWithDelay>();
     for (const event of this.events) {
+      // 跳过已经播放过的event
       if (
         event.timestamp <= this.lastPlayedEvent.timestamp ||
         event === this.lastPlayedEvent
       ) {
         continue;
       }
+      // 这行以下的逻辑和this.play一致
       const castFn = this.getCastFn(event);
       actions.push({
         doAction: castFn,
@@ -171,6 +181,7 @@ export class Replayer {
     castFn();
   }
 
+  // 设置回放的核心DOM元素： warpper、鼠标模拟元素、iframe沙盒
   private setupDom() {
     this.wrapper = document.createElement('div');
     this.wrapper.classList.add('replayer-wrapper');
@@ -181,8 +192,12 @@ export class Replayer {
     this.wrapper.appendChild(this.mouse);
 
     this.iframe = document.createElement('iframe');
+    // allow-same-origin: 如果没有使用该关键字，嵌入的浏览上下文将被视为来自一个独立的源，这将使 same-origin policy 同源检查失败
+    // https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/iframe
     this.iframe.setAttribute('sandbox', 'allow-same-origin');
-    this.iframe.setAttribute('scrolling', 'no');
+    this.iframe.setAttribute('scrolling', 'no'); // 控制是否要在框架内显示滚动条
+    // pointer-events:指定在什么情况下( 如果有 ) 某个特定的图形元素可以成为鼠标事件的 target。
+    // https://developer.mozilla.org/zh-CN/docs/Web/CSS/pointer-events
     this.iframe.setAttribute('style', 'pointer-events: none');
     this.wrapper.appendChild(this.iframe);
   }
@@ -206,6 +221,8 @@ export class Replayer {
       event.delay = firstTimestamp - this.baselineTime;
       return firstTimestamp - this.baselineTime;
     }
+    // event.timestamp 此事件发生的时间戳
+    // this.baselineTime： 基准事件戳
     event.delay = event.timestamp - this.baselineTime;
     return event.timestamp - this.baselineTime;
   }
@@ -223,13 +240,13 @@ export class Replayer {
             height: event.data.height,
           });
         break;
-      case EventType.FullSnapshot:
+      case EventType.FullSnapshot: // 全量记录
         castFn = () => {
-          this.rebuildFullSnapshot(event);
+          this.rebuildFullSnapshot(event); // 重建完整DOM到页面
           this.iframe.contentWindow!.scrollTo(event.data.initialOffset);
         };
         break;
-      case EventType.IncrementalSnapshot:
+      case EventType.IncrementalSnapshot: // 增量记录
         castFn = () => {
           this.applyIncremental(event, isSync);
           if (event === this.nextUserInteractionEvent) {
@@ -237,6 +254,7 @@ export class Replayer {
             this.restoreSpeed();
           }
           if (this.config.skipInactive && !this.nextUserInteractionEvent) {
+            // 查找下一个用户交互事件
             for (const _event of this.events) {
               if (_event.timestamp! <= event.timestamp!) {
                 continue;
@@ -244,13 +262,14 @@ export class Replayer {
               if (this.isUserInteraction(_event)) {
                 if (
                   _event.delay! - event.delay! >
-                  SKIP_TIME_THRESHOLD * this.config.speed
+                  SKIP_TIME_THRESHOLD * this.config.speed // config.speed倍数
                 ) {
                   this.nextUserInteractionEvent = _event;
                 }
                 break;
               }
             }
+            // 设置倍数
             if (this.nextUserInteractionEvent) {
               this.noramlSpeed = this.config.speed;
               const skipTime =
@@ -289,7 +308,15 @@ export class Replayer {
       );
     }
     this.missingNodeRetryMap = {};
+    /**
+     * 构建页面完整DOM
+     * rebuild will build the DOM according to the taken snapshot. There are several things will be done during rebuild:
+     * 1. Add data-rrid attribute if the Node is an Element.
+     * 2. Create some extra DOM node like text node to place inline CSS and some states.
+     * 3. Add data-extra-child-index attribute if Node has some extra child DOM.
+     */
     mirror.map = rebuild(event.data.node, this.iframe.contentDocument!)[1];
+    // 插入css到iframe
     const styleEl = document.createElement('style');
     const { documentElement, head } = this.iframe.contentDocument!;
     documentElement!.insertBefore(styleEl, head);
@@ -347,6 +374,7 @@ export class Replayer {
     const { data: d } = e;
     switch (d.source) {
       case IncrementalSource.Mutation: {
+        // 模拟节点DOM变化：节点创建/销毁、节点属性变化、文本变化
         d.removes.forEach(mutation => {
           const target = mirror.getNode(mutation.id);
           if (!target) {
@@ -455,7 +483,7 @@ export class Replayer {
         });
         break;
       }
-      case IncrementalSource.MouseMove:
+      case IncrementalSource.MouseMove: // 还原鼠标移动
         if (isSync) {
           const lastPosition = d.positions[d.positions.length - 1];
           this.moveAndHover(d, lastPosition.x, lastPosition.y, lastPosition.id);
@@ -472,6 +500,7 @@ export class Replayer {
         }
         break;
       case IncrementalSource.MouseInteraction: {
+        // 还原鼠标交互
         /**
          * Same as the situation of missing input target.
          */
@@ -504,6 +533,7 @@ export class Replayer {
           case MouseInteractions.TouchStart:
           case MouseInteractions.TouchEnd:
             /**
+             * 鼠标点击不会真的触发click事件，只会添加一个动画效果
              * Click has no visual impact when replaying and may
              * trigger navigation when apply to an <a> link.
              * So we will not call click(), instead we add an
@@ -514,7 +544,7 @@ export class Replayer {
               this.moveAndHover(d, d.x, d.y, d.id);
               this.mouse.classList.remove('active');
               // tslint:disable-next-line
-              void this.mouse.offsetWidth;
+              void this.mouse.offsetWidth; // 触发回流？？
               this.mouse.classList.add('active');
             }
             break;
@@ -524,6 +554,7 @@ export class Replayer {
         break;
       }
       case IncrementalSource.Scroll: {
+        // 模拟滚动
         /**
          * Same as the situation of missing input target.
          */
@@ -553,13 +584,14 @@ export class Replayer {
         }
         break;
       }
-      case IncrementalSource.ViewportResize:
+      case IncrementalSource.ViewportResize: // 模拟视口尺寸变化
         this.emitter.emit(ReplayerEvents.Resize, {
           width: d.width,
           height: d.height,
         });
         break;
       case IncrementalSource.Input: {
+        // 模拟input元素值变化
         /**
          * Input event on an unserialized node usually means the event
          * was synchrony triggered programmatically after the node was
@@ -637,6 +669,16 @@ export class Replayer {
     }
   }
 
+  /**
+   * 是否属于用户交互产生的事件
+   * MouseMove,MouseInteraction,Scroll,ViewportResize,Input
+   *
+   * @author liubin.frontend
+   * @private
+   * @param {eventWithTime} event
+   * @returns {boolean}
+   * @memberof Replayer
+   */
   private isUserInteraction(event: eventWithTime): boolean {
     if (event.type !== EventType.IncrementalSnapshot) {
       return false;
@@ -647,6 +689,7 @@ export class Replayer {
     );
   }
 
+  // 回复倍数
   private restoreSpeed() {
     if (this.noramlSpeed === -1) {
       return;

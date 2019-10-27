@@ -434,14 +434,15 @@ function initInputObserver(
       !target ||
       !(target as Element).tagName ||
       INPUT_TAGS.indexOf((target as Element).tagName) < 0 ||
-      isBlocked(target as Node, blockClass)
+      isBlocked(target as Node, blockClass) // 默认是 'rr-block'
     ) {
       return;
     }
     const type: string | undefined = (target as HTMLInputElement).type;
+    // 不记录密码
     if (
       type === 'password' ||
-      (target as HTMLElement).classList.contains(ignoreClass)
+      (target as HTMLElement).classList.contains(ignoreClass) // 默认是'rr-ignore'
     ) {
       return;
     }
@@ -452,7 +453,8 @@ function initInputObserver(
     if (type === 'radio' || type === 'checkbox') {
       isChecked = (target as HTMLInputElement).checked;
     } else if (hasTextInput && maskAllInputs) {
-      text = '*'.repeat(text.length);
+      // maskAllInputs默认false
+      text = '*'.repeat(text.length); // 用*替换输入框内所有文本
     }
     cbWithDedup(target, { text, isChecked });
     // if a radio was checked
@@ -472,12 +474,14 @@ function initInputObserver(
     }
   }
   function cbWithDedup(target: EventTarget, v: inputValue) {
+    // lastInputValueMap 记录目标元素此前的文本和是否选中
     const lastInputValue = lastInputValueMap.get(target);
     if (
       !lastInputValue ||
       lastInputValue.text !== v.text ||
       lastInputValue.isChecked !== v.isChecked
     ) {
+      // 如果状态发生了变化，更新到map中,并记录为一条增量记录
       lastInputValueMap.set(target, v);
       const id = mirror.getId(target as INode);
       cb({
@@ -486,6 +490,7 @@ function initInputObserver(
       });
     }
   }
+  // 默认监听input和change事件
   const handlers: Array<listenerHandler | hookResetter> = [
     'input',
     'change',
@@ -500,6 +505,7 @@ function initInputObserver(
     [HTMLSelectElement.prototype, 'value'],
     [HTMLTextAreaElement.prototype, 'value'],
   ];
+  // 拦截input、select、textArea元素的setter，以监听在js代码里设置这些DOM的值
   if (propertyDescriptor && propertyDescriptor.set) {
     handlers.push(
       ...hookProperties.map(p =>
