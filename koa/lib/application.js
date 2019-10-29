@@ -128,6 +128,7 @@ module.exports = class Application extends Emitter {
     if (!this.listenerCount('error')) this.on('error', this.onerror);
 
     const handleRequest = (req, res) => {
+      // 每个请求过来时，都创建一个context
       const ctx = this.createContext(req, res);
       return this.handleRequest(ctx, fn);
     };

@@ -1,4 +1,3 @@
-
 'use strict';
 
 /**
@@ -24,9 +23,9 @@ const IP = Symbol('context#ip');
  */
 
 module.exports = {
-
   /**
    * Return request header.
+   * request.req是原生的IncomingMessage对象
    *
    * @return {Object}
    * @api public
@@ -142,6 +141,7 @@ module.exports = {
    */
 
   get path() {
+    // parse第三方库:  https://github.com/pillarjs/parseurl ，内部带有缓存
     return parse(this.req).pathname;
   },
 
@@ -155,7 +155,7 @@ module.exports = {
   set path(path) {
     const url = parse(this.req);
     if (url.pathname === path) return;
-
+    // 保留了查询参数
     url.pathname = path;
     url.path = null;
 
@@ -171,7 +171,8 @@ module.exports = {
 
   get query() {
     const str = this.querystring;
-    const c = this._querycache = this._querycache || {};
+    // 一个简单的缓存
+    const c = (this._querycache = this._querycache || {});
     return c[str] || (c[str] = qs.parse(str));
   },
 
@@ -207,6 +208,7 @@ module.exports = {
 
   set querystring(str) {
     const url = parse(this.req);
+    // 和已有的不同才做修改
     if (url.search === `?${str}`) return;
 
     url.search = str;
@@ -289,6 +291,7 @@ module.exports = {
     if (!this.memoizedURL) {
       const protocol = this.protocol;
       const host = this.host;
+      // originalUrl  原生的IncomingMessage.url字符串, 示范 /status?name=ryan
       const originalUrl = this.originalUrl || ''; // avoid undefined in template string
       try {
         this.memoizedURL = new URL(`${protocol}://${host}${originalUrl}`);
@@ -337,7 +340,7 @@ module.exports = {
   },
 
   /**
-   * Check if the request is idempotent.
+   * Check if the request is idempotent. 是否幂等
    *
    * @return {Boolean}
    * @api public
@@ -403,6 +406,7 @@ module.exports = {
   get protocol() {
     if (this.socket.encrypted) return 'https';
     if (!this.app.proxy) return 'http';
+    // XFP: https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Headers/X-Forwarded-Proto
     const proto = this.get('X-Forwarded-Proto');
     return proto ? proto.split(/\s*,\s*/, 1)[0] : 'http';
   },
@@ -434,10 +438,9 @@ module.exports = {
 
   get ips() {
     const proxy = this.app.proxy;
+    // XFF: https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Headers/X-Forwarded-For
     const val = this.get('X-Forwarded-For');
-    return proxy && val
-      ? val.split(/\s*,\s*/)
-      : [];
+    return proxy && val ? val.split(/\s*,\s*/) : [];
   },
 
   /**
@@ -479,6 +482,7 @@ module.exports = {
   get subdomains() {
     const offset = this.app.subdomainOffset;
     const hostname = this.hostname;
+    // Tests if input is an IP address.Returns 0 for invalid strings, returns 4 for IP version 4 addresses, and returns 6 for IP version 6 addresses.
     if (net.isIP(hostname)) return [];
     return hostname
       .split('.')
@@ -504,7 +508,7 @@ module.exports = {
    * @api private
    */
   set accept(obj) {
-    return this._accept = obj;
+    return (this._accept = obj);
   },
 
   /**
@@ -673,7 +677,7 @@ module.exports = {
 
   get(field) {
     const req = this.req;
-    switch (field = field.toLowerCase()) {
+    switch ((field = field.toLowerCase())) {
       case 'referer':
       case 'referrer':
         return req.headers.referrer || req.headers.referer || '';
@@ -702,11 +706,7 @@ module.exports = {
    */
 
   toJSON() {
-    return only(this, [
-      'method',
-      'url',
-      'header'
-    ]);
+    return only(this, ['method', 'url', 'header']);
   }
 };
 

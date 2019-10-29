@@ -1,4 +1,3 @@
-
 'use strict';
 
 /**
@@ -25,7 +24,6 @@ const util = require('util');
  */
 
 module.exports = {
-
   /**
    * Return the request socket.
    *
@@ -46,9 +44,7 @@ module.exports = {
 
   get header() {
     const { res } = this;
-    return typeof res.getHeaders === 'function'
-      ? res.getHeaders()
-      : res._headers || {};  // Node < 7.7
+    return typeof res.getHeaders === 'function' ? res.getHeaders() : res._headers || {}; // Node < 7.7
   },
 
   /**
@@ -210,7 +206,7 @@ module.exports = {
       if (isJSON(body)) return Buffer.byteLength(JSON.stringify(body));
       return;
     }
-
+    // Math.trunc 小数取下整;
     return Math.trunc(len) || 0;
   },
 
@@ -222,6 +218,7 @@ module.exports = {
    */
 
   get headerSent() {
+    // True if headers were sent, false otherwise.
     return this.res.headersSent;
   },
 
@@ -439,7 +436,7 @@ module.exports = {
     if (this.headerSent) return;
 
     if (2 == arguments.length) {
-      if (Array.isArray(val)) val = val.map(v => typeof v === 'string' ? v : String(v));
+      if (Array.isArray(val)) val = val.map(v => (typeof v === 'string' ? v : String(v)));
       else if (typeof val !== 'string') val = String(val);
       this.res.setHeader(field, val);
     } else {
@@ -469,9 +466,7 @@ module.exports = {
     const prev = this.get(field);
 
     if (prev) {
-      val = Array.isArray(prev)
-        ? prev.concat(val)
-        : [prev].concat(val);
+      val = Array.isArray(prev) ? prev.concat(val) : [prev].concat(val);
     }
 
     return this.set(field, val);
@@ -501,6 +496,7 @@ module.exports = {
 
   get writable() {
     // can't write any more after response finished
+    // Boolean value that indicates whether the response has completed.Starts as false.After response.end() executes, the value will be true.
     if (this.res.finished) return false;
 
     const socket = this.res.socket;
@@ -532,11 +528,7 @@ module.exports = {
    */
 
   toJSON() {
-    return only(this, [
-      'status',
-      'message',
-      'header'
-    ]);
+    return only(this, ['status', 'message', 'header']);
   },
 
   /**
