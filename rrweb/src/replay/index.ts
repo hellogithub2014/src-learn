@@ -320,9 +320,8 @@ export class Replayer {
     const styleEl = document.createElement('style');
     const { documentElement, head } = this.iframe.contentDocument!;
     documentElement!.insertBefore(styleEl, head);
-    const injectStylesRules = getInjectStyleRules(
-      this.config.blockClass,
-    ).concat(this.config.insertStyleRules);
+    const injectStylesRules = getInjectStyleRules(this.config.blockClass) // 设置iframe的样式
+      .concat(this.config.insertStyleRules); // 用户传入的其他内联样式
     for (let idx = 0; idx < injectStylesRules.length; idx++) {
       (styleEl.sheet! as CSSStyleSheet).insertRule(injectStylesRules[idx], idx);
     }
